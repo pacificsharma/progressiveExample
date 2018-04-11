@@ -24,6 +24,39 @@
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="style/buttons.css">
+    <link rel="stylesheet" href="style/confirm.css">
+    <link rel="stylesheet" href="style/edit_mode.css">
+    <link rel="stylesheet" href="style/headers.css">
+    <link rel="stylesheet" href="style/input_areas.css">
+    <link rel="stylesheet" href="style/status.css">
+    <link rel="stylesheet" href="style/switches.css">
+    <link rel="stylesheet" href="style_unstable/drawer.css">
+    <link rel="stylesheet" href="style_unstable/lists.css">
+    <link rel="stylesheet" href="style_unstable/progress_activity.css">
+    <link rel="stylesheet" href="style_unstable/scrolling.css">
+    <link rel="stylesheet" href="style_unstable/tabs.css">
+    <link rel="stylesheet" href="style_unstable/toolbars.css">
+  
+    <!-- Icons -->
+    <link rel="stylesheet" href="icons/styles/action_icons.css">
+    <link rel="stylesheet" href="icons/styles/media_icons.css">
+    <link rel="stylesheet" href="icons/styles/comms_icons.css">
+    <link rel="stylesheet" href="icons/styles/settings_icons.css">
+  
+    <!-- Transitions -->
+    <link rel="stylesheet" href="css/transitions.css">
+    
+    <!-- Util CSS: some extra tricks -->
+    <link rel="stylesheet" href="css/util.css">
+    <!--<link rel="stylesheet" href="css/fonts.css">-->
+  
+    <!-- Additional markup to make Building Blocks kind of cross browser -->
+    <link rel="stylesheet" href="css/cross_browser.css">
+  
+    <!-- Additional styles -->
+    <link rel="stylesheet" href="css/jquery.nouislider.min5.0.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8"/>
   </head>
   <body>
   <div class="app app__layout">
@@ -44,73 +77,35 @@
           <a target="_blank" rel="noopener" href="https://github.com/ps1070ag10">Author</a>
         </li>
         <li>
-          <a target="_blank" rel="noopener" href="https://github.com/gokulkrishh/demo-progressive-web-app">Source</a>
+          <a target="_blank" rel="noopener" href="https://github.com/ps1070ag10/progressiveExample">Source</a>
         </li>
       </ul>
     </div>
     <div class="menu__overlay"></div>
 
     <div class="app__content">
-      <h3><a target="_blank" rel="noopener" href="https://developers.google.com/web/updates/2015/03/introduction-to-fetch">Fetch API</a></h3>
+     <script>
 
-      <div class="card">
-        <div class="card__spinner"></div>
-        <div class="card__container">
-          <img alt="avatar" class="card__img" src="">
-          <p class="card__title"></p>
-          <p class="card__desc"></p>
-          <p class="card__temp">
-            <b>Company: </b><span></span>
-          </p>
-          <p class="card__following"><b>Following: </b><span></span></p>
-          <p class="card__followers"><b>Followers: </b><span></span></p>
-          <div class="add__to-card">
-            <input type="text" class="add__input" placeholder="Enter a github username" />
-            <button class="add__btn">Add</button>
-          </div>
-        </div>
-      </div>
+$("#avatar-1").fileinput({
+    overwriteInitial: true,
+    maxFileSize: 1500,
+    showClose: false,
+    showCaption: false,
+    browseLabel: '',
+    removeLabel: '',
+    browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+    removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+    removeTitle: 'Cancel or reset changes',
+    elErrorContainer: '#kv-avatar-errors-1',
+    msgErrorClass: 'alert alert-block alert-danger',
+    defaultPreviewContent: '<img src="/uploads/default_avatar_male.jpg" alt="Your Avatar" style="width:160px">',
+    layoutTemplates: {main2: '{preview} ' +  btnCust + ' {remove} {browse}'},
+    allowedFileExtensions: ["jpg", "png", "gif"]
+});
+</script>
 
-      <div class="add__card">
-        <h3><a target="_blank" rel="noopener" href="https://developers.google.com/web/updates/2015/12/background-sync">Background Sync API</a></h3>
-        <h3>Emulate via chrome devTools</h3>
-        <h4>Enable BG Sync:
-          <span class="bg-sync__text" hidden>Registered</span>
-          <span class="custom__button custom__button-bg">
-            <button class="turn-on-sync">Register</button>
-          </span>
-        </h4>
-        <ul>
-          <li><b>Step 1: </b> Go offline in devTools and register BG Sync.</li>
-          <li><b>Step 2: </b>Go to application tab in chrome devTools and navigate to serviceWorker tab.</li>
-          <li><b>Step 3: </b>Go online and click `sync` button to emulate bg sync.</li>
-          <li><b>Step 4: </b>Above card will be updated as per your input.</li>
-        </ul>
-      </div>
 
       <div class="card__spinner"></div>
-
-      <div class="share__container">
-        <h3><a target="_blank" rel="noopener" href="https://developers.google.com/web/updates/2016/10/navigator-share">Web Share API</a></h3>
-        <ul>
-          <li><b>Step 1: </b>Go to <a href="https://play.google.com/store/apps/details?id=com.chrome.dev&hl=en" target="_blank" rel="noopener">Chrome Beta on Android</a></li>
-          <li><b>Step 2: </b>Toggle <a href="chrome://flags/#enable-experimental-web-platform-features" target="_blank" rel="noopener">chrome://flags/#enable-experimental-web-platform-features</a></li>
-          <li><b>Step 3: </b>Click below button to share.</li>
-          <li><b>OR </b></li>
-          <li><a href="https://github.com/jpchase/OriginTrials/blob/gh-pages/developer-guide.md">Try Origin Trial Token</a> in chrome stable.</li>
-        </ul>
-
-        <button class="share">Share</button>
-      </div>
-
-      <div class="share__container">
-        <h3><a target="_blank" rel="noopener" href="https://developers.google.com/web/updates/2017/02/navigation-preload">Navigation Preload</a></h3>
-        <ul>
-          <li><b>Step 1: </b>Toggle <a href="chrome://flags/#enable-experimental-web-platform-features" target="_blank" rel="noopener">chrome://flags/#enable-service-worker-navigation-preload</a></li>
-          <li><b>OR </b></li>
-          <li><a href="https://github.com/jpchase/OriginTrials/blob/gh-pages/developer-guide.md">Try Origin Trial Token</a> in chrome stable.</li>
-        </ul>
-      </div>
 
       <div class="fab fab__push">
         <div class="fab__ripple"></div>
@@ -123,10 +118,22 @@
   </div>
 
   <!-- JS Files  -->
+<!-- This library is under MIT Licence -->
+<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script><!-- This library is under MIT Licence -->
+  <script src="js/jquery.nouislider.min5.0.js" type="text/javascript" charset="utf-8"></script><!-- This library is under Do What The Fuck You Want To Public License (WTFPL) -->
+  <script src="js/underscore-min1.6.0.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/backbone-min1.1.2.js" type="text/javascript" charset="utf-8"></script><!-- This library is under MIT Licence -->
+  <script src="js/status.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script src="js/lang.js" type="text/javascript" charset="utf-8" defer></script> 
+  <script src="js/podo.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/status.js"></script>
+  
+  
   <script src="./js/toast.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/offline.js"></script>
-  <script src="./js/app.js"></script>
   <script src="./js/push.js"></script>
   <script src="./js/sync.js"></script>
   <script src="./js/share.js"></script>

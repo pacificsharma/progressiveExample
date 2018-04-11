@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Demo Progressive Web Application</title>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=description content="This a Demo Progressive Web Application which will work in offline, has a splash screen add to home screen etc,.">
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0288d1">
+    <meta name="msapplication-TileColor" content="#0288d1">
+    <meta name="msapplication-TileImage" content="./images/icons/mstile-150x150.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Progressive Web Application">
+    <meta name="application-name" content="Progressive Web Application">
+    <!-- Origin Trial Token, feature = Web Share, origin = https://demopwa.in, expires = 2017-04-17 -->
+    <meta http-equiv="origin-trial" data-feature="Web Share" data-expires="2017-04-17" content="AqxDhXbIy0/QU7yDfw50G9cTlpGU9htcJzWxSgOyJgQfJJJZUBRWGXzNTiMWcW9bnuihdkrkcgahym5X8k/OzAsAAABfeyJvcmlnaW4iOiJodHRwczovL2RlbW9wd2EuaW46NDQzIiwiZmVhdHVyZSI6IldlYlNoYXJlIiwiZXhwaXJ5IjoxNDkyNDczNjAwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=">
+    <!-- Origin Trial Token, feature = Service Worker Navigation Preload, origin = https://demopwa.in, expires = 2017-04-04 -->
+    <meta http-equiv="origin-trial" data-feature="Service Worker Navigation Preload" data-expires="2017-04-04" content="AvSW/jxBbsmzTBOZnI+nSx+Nxqu4GxOuSxec7UfWnTri+qzfuFLolnnyitIvQIMOvrirRMYSLh1p3UhOg2tPygIAAABieyJvcmlnaW4iOiJodHRwczovL2RlbW9wd2EuaW46NDQzIiwiZmVhdHVyZSI6IlNlcnZpY2VXb3JrZXJOYXZpZ2F0aW9uUHJlbG9hZCIsImV4cGlyeSI6MTQ5MTMzNzAxMH0=">
+    <link rel="apple-touch-icon" href="./images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="style/buttons.css">
+    <link rel="stylesheet" href="style/confirm.css">
+    <link rel="stylesheet" href="style/edit_mode.css">
+    <link rel="stylesheet" href="style/headers.css">
+    <link rel="stylesheet" href="style/input_areas.css">
+    <link rel="stylesheet" href="style/status.css">
+    <link rel="stylesheet" href="style/switches.css">
+    <link rel="stylesheet" href="style_unstable/drawer.css">
+    <link rel="stylesheet" href="style_unstable/lists.css">
+    <link rel="stylesheet" href="style_unstable/progress_activity.css">
+    <link rel="stylesheet" href="style_unstable/scrolling.css">
+    <link rel="stylesheet" href="style_unstable/tabs.css">
+    <link rel="stylesheet" href="style_unstable/toolbars.css">
+  
+    <!-- Icons -->
+    <link rel="stylesheet" href="icons/styles/action_icons.css">
+    <link rel="stylesheet" href="icons/styles/media_icons.css">
+    <link rel="stylesheet" href="icons/styles/comms_icons.css">
+    <link rel="stylesheet" href="icons/styles/settings_icons.css">
+  
+    <!-- Transitions -->
+    <link rel="stylesheet" href="css/transitions.css">
+    
+    <!-- Util CSS: some extra tricks -->
+    <link rel="stylesheet" href="css/util.css">
+    <!--<link rel="stylesheet" href="css/fonts.css">-->
+  
+    <!-- Additional markup to make Building Blocks kind of cross browser -->
+    <link rel="stylesheet" href="css/cross_browser.css">
+  
+    <!-- Additional styles -->
+    <link rel="stylesheet" href="css/jquery.nouislider.min5.0.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  </head>
+  <body>
+  <div class="app app__layout">
+    <header>
+      <span class="header__icon">
+        <svg class="menu__icon no--select" width="24px" height="24px" viewBox="0 0 48 48" fill="#fff">
+          <path d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"></path>
+        </svg>
+      </span>
+
+      <span class="header__title no--select">Progressive Web Application</span>
+    </header>
+
+    <div class="menu">
+      <div class="menu__header"></div>
+      <ul class="menu__list">
+        <li>
+          <a target="_blank" rel="noopener" href="https://github.com/ps1070ag10">Author</a>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener" href="https://github.com/ps1070ag10/progressiveExample">Source</a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu__overlay"></div>
+
+    <div class="app__content">
+     <script>
+
+$("#avatar-1").fileinput({
+    overwriteInitial: true,
+    maxFileSize: 1500,
+    showClose: false,
+    showCaption: false,
+    browseLabel: '',
+    removeLabel: '',
+    browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+    removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+    removeTitle: 'Cancel or reset changes',
+    elErrorContainer: '#kv-avatar-errors-1',
+    msgErrorClass: 'alert alert-block alert-danger',
+    defaultPreviewContent: '<img src="/uploads/default_avatar_male.jpg" alt="Your Avatar" style="width:160px">',
+    layoutTemplates: {main2: '{preview} ' +  btnCust + ' {remove} {browse}'},
+    allowedFileExtensions: ["jpg", "png", "gif"]
+});
+</script>
+
+
+      <div class="card__spinner"></div>
+
+      <div class="fab fab__push">
+        <div class="fab__ripple"></div>
+        <img class="fab__image" src="./images/push-off.png" alt="Push Notification" />
+      </div>
+
+      <!-- Toast msg -->
+      <div class="toast__msg"></div>
+    </div>
+  </div>
+
+  <!-- JS Files  -->
+<!-- This library is under MIT Licence -->
+<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script><!-- This library is under MIT Licence -->
+  <script src="js/jquery.nouislider.min5.0.js" type="text/javascript" charset="utf-8"></script><!-- This library is under Do What The Fuck You Want To Public License (WTFPL) -->
+  <script src="js/underscore-min1.6.0.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/backbone-min1.1.2.js" type="text/javascript" charset="utf-8"></script><!-- This library is under MIT Licence -->
+  <script src="js/status.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script src="js/lang.js" type="text/javascript" charset="utf-8" defer></script> 
+  <script src="js/podo.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/status.js"></script>
+  
+  
+  <script src="./js/toast.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/offline.js"></script>
+  <script src="./js/push.js"></script>
+  <script src="./js/sync.js"></script>
+  <script src="./js/share.js"></script>
+  <script src="./js/menu.js"></script>
+
+  <!-- My Google Analytics Report -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-92627241-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>

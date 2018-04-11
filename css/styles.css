@@ -87,7 +87,6 @@ header {
   top: 0;
   background-color: #1E88E5;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
@@ -108,13 +107,10 @@ header {
   width: 48px;
   height: 48px;
   margin: 4px;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
@@ -143,17 +139,13 @@ header {
   bottom: 0;
   box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.4);
   z-index: 1;
-  transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.30, 1);
   transition: transform 0.3s cubic-bezier(0, 0, 0.30, 1);
-  transition: transform 0.3s cubic-bezier(0, 0, 0.30, 1), -webkit-transform 0.3s cubic-bezier(0, 0, 0.30, 1);
-  -webkit-transform: translateX(-110%);
   transform: translateX(-110%);
   will-change: transform;
   z-index: 2;
 }
 
 .menu--show {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -228,8 +220,7 @@ header {
   font-size: 15px;
   font-weight: 400;
   opacity: 0;
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
+  transform: translateY(20px);
   will-change: transform;
   position: fixed;
   bottom: 20px;
@@ -238,8 +229,7 @@ header {
 
 .toast__msg--show {
   opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 
 button {
@@ -300,13 +290,10 @@ button:disabled {
 
 .card__container {
   margin-top: 30px;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .card {
@@ -367,13 +354,10 @@ b {
 .card__temp,
 .card__followers,
 .card__following {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   margin-bottom: 5px;
 }
 
@@ -388,15 +372,12 @@ b {
   border-radius: 50%;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
   color: #fff;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   cursor: pointer;
   position: fixed;
   bottom: 0;
@@ -418,15 +399,11 @@ b {
   bottom: -12px;
   width: 56px;
   height: 56px;
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
+  transform: scale(0.5);
   background: #fff;
   border-radius: 50%;
-  -webkit-transform-origin: 50%;
-          transform-origin: 50%;
-  transition: -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  transform-origin: 50%;
   transition: transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
-  transition: transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms, -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   will-change: transform;
@@ -440,8 +417,7 @@ b {
 
 .fab:active .fab__ripple {
   opacity: 0.2;
-  -webkit-transform: scale(1) translate(31%, -22%);
-          transform: scale(1) translate(31%, -22%);
+  transform: scale(1) translate(31%, -22%);
 }
 
 .fab__image {
@@ -491,13 +467,10 @@ b {
 }
 
 .add__to-card {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   margin-bottom: 20px;
 }
 
@@ -535,6 +508,7 @@ b i a {
   margin: auto;
   background: rgba(0, 0, 0, 0.16);
   display: none;
+  z-index: 100;
 }
 
 .card__spinner::after {
@@ -569,4 +543,20 @@ b i a {
   margin: 20px auto;
   text-align: center;
   display: block;
+}
+.kv-avatar .krajee-default.file-preview-frame,.kv-avatar .krajee-default.file-preview-frame:hover {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+.kv-avatar .file-input {
+    display: table-cell;
+    max-width: 220px;
+}
+.kv-reqd {
+    color: red;
+    font-family: monospace;
+    font-weight: normal;
 }
